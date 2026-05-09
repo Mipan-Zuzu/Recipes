@@ -8,17 +8,17 @@ import {createWebHistory, createRouter} from "vue-router"
 
 const routes = [
     {
-        path: "/:pathMatch(.*)*",
-        component: ErrorElement
-    },
-    {
         path: "/",
         component: Home
     },
     {
         path: "/about",
         component: About
-    }
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        component: ErrorElement
+    },
 ]
 
 export const router = createRouter({
