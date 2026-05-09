@@ -42,13 +42,13 @@ watch(search, () => {
 <template>
   <div class="min-h-screen bg-stone-100 px-4 py-6 font-mono sm:px-6 lg:px-10">
     <div
-      class="mx-auto flex w-full max-w-3xl items-center gap-2 rounded-md border border-b-4 bg-white/70 p-3 backdrop-blur-lg sm:gap-3 sm:p-4"
+      class="fixed left-1/2 top-4 z-50 flex w-[calc(100%-2rem)] max-w-3xl -translate-x-1/2 items-center gap-2 rounded-md border border-b-4 p-3 shadow-sm backdrop-blur-lg sm:top-5 sm:gap-3 sm:p-4"
     >
       <Search class="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
       <input
         ref="inputRef"
         v-model="search"
-        class="w-full bg-transparent text-sm outline-none sm:text-base"
+        class="w-full bg-transparent text-base outline-none"
         type="text"
         placeholder="Cari menu resep"
       />
@@ -57,12 +57,12 @@ watch(search, () => {
 
     <p ref="target"></p>
 
-    <div v-if="!data || data.length === 0" class="mx-auto mt-12 flex w-full max-w-3xl items-center gap-3">
+    <div v-if="!data || data.length === 0" class="mx-auto mt-28 flex w-full max-w-3xl items-center gap-3 sm:mt-32">
       <p>Loading</p>
       <LoaderCircle class="animate-spin text-stone-500" />
     </div>
 
-    <div class="mx-auto mt-8 flex w-full max-w-3xl flex-col gap-8 sm:mt-10">
+    <div class="mx-auto mt-28 flex w-full max-w-3xl flex-col gap-8 sm:mt-32">
       <div
         v-for="recipe in data"
         :key="recipe.id"
@@ -100,4 +100,6 @@ watch(search, () => {
     </div>
   </div>
 </template>
+
+
 
